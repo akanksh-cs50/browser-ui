@@ -34,3 +34,11 @@ The default is like this:
 - vmlinuz.old@
 
 But with mine I'll have something which combines the look of explorer.exe and ls-icons.
+
+## TODO
+
+Take ``htmlgen.py`` as a base and make a flask app which lists directory content.
+The route should match the directory content.
+Eg: 'localhost:5000/home/akanksh/' should show all the files in my directory.
+Need to figure out file associations to use the appropriate icons too.
+Like devicons, [vim-devicons](https://github.com/ryanoasis/vim-devicons) and [vscode-icons](https://github.com/vscode-icons/vscode-icons)
