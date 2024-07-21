@@ -244,6 +244,11 @@ associations = {
 }
 
 def icon_name(filename:str):
+    # for directories
+    if filename[-1] == '/':
+        return 'nf nf-oct-file_directory'
+
+    # for files
     try:
         return associations[filename.split('.')[-1]] # Using -1 index which gives us the last element in the list.
     except KeyError:

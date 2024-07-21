@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+	<title>{path}</title>
+</head>
+<body>
+	{% for item in items %}
+		<i class="{{ item | icon_name }}"></i> {{item}}
+	{% endfor %}
+</body>
+</html>
