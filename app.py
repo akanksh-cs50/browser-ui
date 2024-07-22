@@ -11,6 +11,7 @@ app.jinja_env.filters["icon_name"] = icon_name
 def favicon():
     return redirect('/')
 
+@app.route('/', defaults={'current_dir': ''})
 @app.route('/<path:current_dir>')
 def ui(current_dir):
 
