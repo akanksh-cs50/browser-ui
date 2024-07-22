@@ -5,6 +5,7 @@ ul {
 li {
 	padding: 0.25rem;
 	width: fit-content;
+	text-wrap: nowrap;
 }
 
 li:hover {
