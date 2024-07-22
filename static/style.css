@@ -21,3 +21,14 @@ a {
 body {
 	font-size: 4vh;
 }
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: black;
+		color: white;
+	}
+
+	a {
+		color: #00ff00;
+	}
+}
