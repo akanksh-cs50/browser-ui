@@ -29,11 +29,9 @@ def ui(current_dir):
         results are like directoryfile'
         """
         if os.path.isfile(current_dir + '/' + item):
-            print(f'{item} is considered a FILE with {current_dir + item} as full path')
             items.append(item)
         else:
             # Append '/' to distinguish between directory and folders
-            print(f'{item} is considered a DIRECTORY with {current_dir + item} as full path')
             item += '/'
             items.append(item)
 
