@@ -11,14 +11,14 @@
 <body>
 	<ul>
 		<!-- current and previous directory -->
-		<li><i class="{{ './' | icon_name }}"></i> <a href='./'>./</a></li>
-		<li><i class="{{ '../' | icon_name }}"></i> <a href='../'>../</a></li>
+		<li><a href='./'><i class="{{ './' | icon_name }}"></i> ./</a></li>
+		<li><a href='../'><i class="{{ '../' | icon_name }}"></i> ../</a></li>
 		{% for item in items %}
-		<li><i class="{{ item | icon_name }}"></i>
+		<li>
 			{% if path[-1] != '/' %}
-				<a href='{{path + '/' + item}}'>{{item}}</a>
+				<a href='{{path + '/' + item}}'><i class="{{ item | icon_name }}"></i> {{item}}</a>
 			{% else %}
-				<a href='{{path + item}}'>{{item}}</a>
+				<a href='{{path + item}}'><i class="{{ item | icon_name }}"></i> {{item}}</a>
 			{% endif %}
 		</li>
 		{% endfor %}
