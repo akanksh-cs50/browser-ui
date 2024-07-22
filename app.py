@@ -24,7 +24,13 @@ def ui(current_dir):
         return send_file(current_dir)
 
     if not os.path.exists(current_dir):
-        return "<p>Path not found.</p>"
+        return render_template('error.html', error='File not found')
+
+    # Checking for PermissionError
+    try:
+        os.listdir(current_dir)
+    except PermissionError:
+        return render_template('error.html', error=f'Permission denied: {current_dir}')
 
     for item in os.listdir(current_dir):
         """
