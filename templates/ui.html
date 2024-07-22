@@ -14,7 +14,7 @@
 		<li><i class="{{ './' | icon_name }}"></i> <a href='./'>./</a></li>
 		<li><i class="{{ '../' | icon_name }}"></i> <a href='../'>../</a></li>
 		{% for item in items %}
-		<li><i class="{{ item | icon_name }}"></i> <a href='{{path + item}}'>{{item}}</a></li>
+		<li><i class="{{ item | icon_name }}"></i> <a href='{{path + '/' + item}}'>{{item}}</a></li>
 		{% endfor %}
 	</ul>
 </body>
