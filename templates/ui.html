@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-	<title>{path}</title>
+	<title>{{path}}</title>
+	<style>
+		@import "https://www.nerdfonts.com/assets/css/webfont.css"
+	</style>
 </head>
 <body>
 	{% for item in items %}
-		<i class="{{ item | icon_name }}"></i> {{item}}
+		<i class="{{ item | icon_name }}"></i> {{item}} <br>
 	{% endfor %}
 </body>
 </html>
