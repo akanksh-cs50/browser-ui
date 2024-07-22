@@ -118,6 +118,7 @@ associations = {
     'gcode': 'nf nf-dev-gcode',
     'gen': 'nf nf-dev-genstat',
     'git': 'nf nf-dev-git',
+    'gitignore': 'nf nf-dev-git',
     'gleam': 'nf nf-dev-gleam',
     'glsl': 'nf nf-dev-glsl',
     'glyphs': 'nf nf-dev-glyphs',
