@@ -6,13 +6,16 @@
 	<style>
 		@import "https://www.nerdfonts.com/assets/css/webfont.css"
 	</style>
+	<link rel='stylesheet' href='{{url_for('static', filename='style.css')}}'></link>
 </head>
 <body>
-	<!-- current and previous directory -->
-	<i class="{{ './' | icon_name }}"></i> <a href='./'>./</a> <br>
-	<i class="{{ '../' | icon_name }}"></i> <a href='../'>../</a> <br>
-	{% for item in items %}
-		<i class="{{ item | icon_name }}"></i> <a href='{{path + item}}'>{{item}}</a> <br>
-	{% endfor %}
+	<ul>
+		<!-- current and previous directory -->
+		<li><i class="{{ './' | icon_name }}"></i> <a href='./'>./</a></li>
+		<li><i class="{{ '../' | icon_name }}"></i> <a href='../'>../</a></li>
+		{% for item in items %}
+		<li><i class="{{ item | icon_name }}"></i> <a href='{{path + item}}'>{{item}}</a></li>
+		{% endfor %}
+	</ul>
 </body>
 </html>
