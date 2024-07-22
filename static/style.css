@@ -17,3 +17,7 @@ a {
 	text-decoration: none;
 	color: blue;
 }
+
+body {
+	font-size: 4vh;
+}
