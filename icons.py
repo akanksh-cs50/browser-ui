@@ -150,7 +150,7 @@ associations = {
     'icl': 'nf nf-dev-icl',
     'imba': 'nf nf-dev-imba',
     '4gl': 'nf nf-dev-informix',
-    'ini': 'nf nf-dev-ini',
+    'ini': 'nf nf-fa-gear',
     'ink': 'nf nf-dev-ink',
     'iss': 'nf nf-dev-innosetup',
     'io': 'nf nf-dev-io',
