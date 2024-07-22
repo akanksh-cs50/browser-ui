@@ -82,7 +82,7 @@ associations = {
     'pyx': 'nf nf-dev-cython',
     'dal': 'nf nf-dev-dal',
     'dart': 'nf nf-dev-dart',
-    'txt': 'nf-fa-file_text',
+    'txt': 'nf nf-fa-file_text',
     'dhall': 'nf nf-dev-dhall',
     'html': 'nf nf-dev-django',
     'diff': 'nf nf-dev-diff',
