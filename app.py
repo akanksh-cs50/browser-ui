@@ -18,7 +18,10 @@ def ui(current_dir):
     items = []
 
     current_dir = os.path.join('/', current_dir)
-    print(current_dir)
+    
+    # in case the user clicks and gets redirected to a file in the url
+    if os.path.isfile(current_dir):
+        return send_file(current_dir)
 
     if not os.path.exists(current_dir):
         return "<p>Path not found.</p>"

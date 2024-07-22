@@ -8,8 +8,11 @@
 	</style>
 </head>
 <body>
+	<!-- current and previous directory -->
+	<i class="{{ './' | icon_name }}"></i> <a href='./'>./</a> <br>
+	<i class="{{ '../' | icon_name }}"></i> <a href='../'>../</a> <br>
 	{% for item in items %}
-		<i class="{{ item | icon_name }}"></i> {{item}} <br>
+		<i class="{{ item | icon_name }}"></i> <a href='{{path + item}}'>{{item}}</a> <br>
 	{% endfor %}
 </body>
 </html>
