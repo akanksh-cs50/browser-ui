@@ -7,8 +7,12 @@
 		@import "https://www.nerdfonts.com/assets/css/webfont.css"
 	</style>
 	<link rel='stylesheet' href='{{url_for('static', filename='style.css')}}'></link>
+	<script src='{{url_for('static', filename='search.js')}}' defer></script>
 </head>
 <body>
+	<div id="searchBar">
+		<input></input>&nbsp;<i class="nf nf-fa-search"></i>
+	</div>
 	<ul>
 		<!-- current and previous directory -->
 		<li><a href='./'><i class="{{ './' | icon_name }}"></i> ./</a></li>
