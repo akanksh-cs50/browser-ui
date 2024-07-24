@@ -1,4 +1,5 @@
-document.querySelector('input').addEventListener('keypress', function(){
+document.querySelector('input').addEventListener('input', function(){
+	
 	item_elements = document.querySelectorAll('a')
 	items = []
 
