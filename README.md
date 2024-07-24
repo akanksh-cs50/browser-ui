@@ -10,7 +10,7 @@ and make it look like this
 ![Filesystem directory contents with icons beside them to distinguish their type](doc/new.png)
 
 ## TODO
-- [ ] Search with client-side javascript.
+- [X] Search with client-side javascript.
 - [ ] Show current working directory in the UI itself.
 - [ ] Sorting eg. date, size, alphabetical.
 - [ ] Toggle hidden files/directories.
