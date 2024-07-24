@@ -17,14 +17,22 @@
 	<h3>Current directory: {{path}}</h3>
 	<ul>
 		<!-- current and previous directory -->
-		<li><a href='./'><i class="{{ './' | icon_name }}"></i> ./</a></li>
-		<li><a href='../'><i class="{{ '../' | icon_name }}"></i> ../</a></li>
+		<li><a href='./'><i class="nf nf-oct-file_directory"></i> ./</a></li>
+		<li><a href='../'><i class="nf nf-oct-file_directory"></i> ../</a></li>
 		{% for item in items %}
 		<li>
-			{% if path[-1] != '/' %}
-				<a href='{{path + '/' + item}}'><i class="{{ item | icon_name }}"></i> {{item}}</a>
-			{% else %}
-				<a href='{{path + item}}'><i class="{{ item | icon_name }}"></i> {{item}}</a>
+			{% if item.is_symlink() %}
+				{% if item.is_file() %}
+					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
+				{% elif item.is_dir() %}
+					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_directory"></i> {{item.name}}/</a>
+				{% else %}
+					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
+				{% endif %}
+			{% elif item.is_dir() %}
+				<a href='{{item.path}}'><i class="nf nf-oct-file_directory"></i> {{item.name}}/</a>
+			{% elif item.is_file() %}
+				<a href='{{item.path}}'><i class="{{ item.name | icon_name }}"></i> {{item.name}}</a>
 			{% endif %}
 		</li>
 		{% endfor %}

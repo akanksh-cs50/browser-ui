@@ -15,33 +15,23 @@ def favicon():
 @app.route('/<path:current_dir>')
 def ui(current_dir):
 
-    items = []
-
     current_dir = os.path.join('/', current_dir)
-    
+
+    # Checking for PermissionError
+    try:
+        if os.path.isfile(current_dir):
+            open(current_dir)
+        else:
+            os.scandir(current_dir)
+    except PermissionError:
+        return render_template('error.html', error=f'Permission denied: {current_dir}')
+   
     # in case the user clicks and gets redirected to a file in the url
     if os.path.isfile(current_dir):
         return send_file(current_dir)
 
     if not os.path.exists(current_dir):
         return render_template('error.html', error='File not found')
-
-    # Checking for PermissionError
-    try:
-        os.listdir(current_dir)
-    except PermissionError:
-        return render_template('error.html', error=f'Permission denied: {current_dir}')
-
-    for item in os.listdir(current_dir):
-        """
-        '/' is being added in between because the url doesn't end with a slash.
-        results are like directoryfile'
-        """
-        if os.path.isfile(current_dir + '/' + item):
-            items.append(item)
-        else:
-            # Append '/' to distinguish between directory and folders
-            item += '/'
-            items.append(item)
+    items = os.scandir(current_dir)
 
     return render_template('ui.html', path=current_dir, items=items)
