@@ -27,7 +27,7 @@ a {
 body {
 	font-size: 4vh;
 	background-color: var(--background-color);
-	color: var(--foreground-color);
+	color: var(--accent-color);
 
 }
 
@@ -41,10 +41,6 @@ body {
 
 	body {
 	}
-
-	a {
-		color: #00ff00;
-	}
 }
 
 #searchBar {
@@ -52,7 +48,6 @@ body {
 	justify-content: center;
 	margin: 1rem;
 
-	color: var(--accent-color);
 }
 
 input {
@@ -67,6 +62,10 @@ input {
 }
 
 input::placeholder {
-	color: var(--accent-color);
 	opacity: 75%;
+	color: var(--accent-color);
+}
+
+h3 {
+	margin-left: 2.5rem;
 }

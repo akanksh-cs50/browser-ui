@@ -11,7 +11,7 @@ and make it look like this
 
 ## TODO
 - [X] Search with client-side javascript.
-- [ ] Show current working directory in the UI itself.
+- [X] Show current working directory in the UI itself.
 - [ ] Sorting eg. date, size, alphabetical.
 - [ ] Toggle hidden files/directories.
 - [ ] User Auth (probably the most important feature).
