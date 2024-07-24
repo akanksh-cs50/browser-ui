@@ -10,12 +10,17 @@ app.jinja_env.filters["icon_name"] = icon_name
 @app.route('/favicon.ico')
 def favicon():
     return redirect('/')
+BASE_DIR = '/'
+
 
 @app.route('/', defaults={'current_dir': ''})
 @app.route('/<path:current_dir>')
 def ui(current_dir):
 
-    current_dir = os.path.join('/', current_dir)
+    current_dir = os.path.join(BASE_DIR, current_dir)
+
+    if not os.path.exists(current_dir):
+        return render_template('error.html', error='File not found')
 
     # Checking for PermissionError
     try:
@@ -30,8 +35,6 @@ def ui(current_dir):
     if os.path.isfile(current_dir):
         return send_file(current_dir)
 
-    if not os.path.exists(current_dir):
-        return render_template('error.html', error='File not found')
     items = os.scandir(current_dir)
 
-    return render_template('ui.html', path=current_dir, items=items)
+    return render_template('ui.html', path=current_dir, items=items, BASE_DIR=BASE_DIR)
