@@ -8,8 +8,8 @@ document.querySelector('input').addEventListener('input', function(){
 	}
 
 	for(i = 0; i < item_elements.length; i++) {
-		if (items[i].includes(
-			document.querySelector('input').value)
+		if (items[i].toLowerCase().includes(
+			document.querySelector('input').value.toLowerCase())
 		){
 			item_elements[i].style.display = "block"
 		}else{
