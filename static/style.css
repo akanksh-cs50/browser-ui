@@ -65,3 +65,8 @@ input {
 	color: var(--accent-color);
 	border: 0.125em solid var(--accent-color);
 }
+
+input::placeholder {
+	color: var(--accent-color);
+	opacity: 75%;
+}
