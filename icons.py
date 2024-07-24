@@ -250,6 +250,7 @@ associations = {
     'deb': 'nf nf-dev-debian',
     'mp3': 'nf nf-seti-audio',
     'mp4': 'nf nf-oct-video',
+    'webm': 'nf nf-oct-video',
     'iso': 'nf nf-fa-compact_disc',
     'png': 'nf nf-fa-image',
     'jpg': 'nf nf-fa-image',
