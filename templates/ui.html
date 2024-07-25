@@ -23,16 +23,16 @@
 		<li>
 			{% if item.is_symlink() %}
 				{% if item.is_file() %}
-					<a href='{{item.path[BASE_DIR|length-1:]}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
+					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
 				{% elif item.is_dir() %}
-					<a href='{{item.path[BASE_DIR|length-1:]}}'><i class="nf nf-oct-file_symlink_directory"></i> {{item.name}}/</a>
+					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_directory"></i> {{item.name}}/</a>
 				{% else %}
-					<a href='{{item.path[BASE_DIR|length-1:]}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
+					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
 				{% endif %}
 			{% elif item.is_dir() %}
-				<a href='{{item.path[BASE_DIR|length-1:]}}'><i class="nf nf-oct-file_directory"></i> {{item.name}}/</a>
+				<a href='{{item.path}}'><i class="nf nf-oct-file_directory"></i> {{item.name}}/</a>
 			{% elif item.is_file() %}
-				<a href='{{item.path[BASE_DIR|length-1:]}}'><i class="{{ item.name | icon_name }}"></i> {{item.name}}</a>
+				<a href='{{item.path}}'><i class="{{ item.name | icon_name }}"></i> {{item.name}}</a>
 			{% endif %}
 		</li>
 		{% endfor %}

@@ -17,6 +17,7 @@ BASE_DIR = '/'
 @app.route('/<path:current_dir>')
 def ui(current_dir):
 
+    print(BASE_DIR, current_dir)
     current_dir = os.path.join(BASE_DIR, current_dir)
 
     if not os.path.exists(current_dir):
