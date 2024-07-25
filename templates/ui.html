@@ -14,7 +14,7 @@
 		<i class="nf nf-fa-home" onclick="window.location.href = window.location.origin"></i>&nbsp;
 		<input placeholder="Search" autofocus></input>&nbsp;<i class="nf nf-fa-search"></i>
 	</div>
-	<h3>Current directory: {{path}}</h3>
+	<h3>Current directory: {{path.replace(BASE_DIR, '') or '/'}}</h3>
 	<ul>
 		<!-- current and previous directory -->
 		<li><a href='./'><i class="nf nf-oct-file_directory"></i> ./</a></li>
@@ -23,16 +23,16 @@
 		<li>
 			{% if item.is_symlink() %}
 				{% if item.is_file() %}
-					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
+					<a href='{{'/' + item.path[BASE_DIR|length:] if BASE_DIR == '/' else item.path.replace(BASE_DIR, '', 1)}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
 				{% elif item.is_dir() %}
-					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_directory"></i> {{item.name}}/</a>
+					<a href='{{'/' + item.path[BASE_DIR|length:] if BASE_DIR == '/' else item.path.replace(BASE_DIR, '', 1)}}'><i class="nf nf-oct-file_symlink_directory"></i> {{item.name}}/</a>
 				{% else %}
-					<a href='{{item.path}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
+					<a href='{{'/' + item.path[BASE_DIR|length:] if BASE_DIR == '/' else item.path.replace(BASE_DIR, '', 1)}}'><i class="nf nf-oct-file_symlink_file"></i> {{item.name}}</a>
 				{% endif %}
 			{% elif item.is_dir() %}
-				<a href='{{item.path}}'><i class="nf nf-oct-file_directory"></i> {{item.name}}/</a>
+				<a href='{{'/' + item.path[BASE_DIR|length:] if BASE_DIR == '/' else item.path.replace(BASE_DIR, '', 1)}}'><i class="nf nf-oct-file_directory"></i> {{item.name}}/</a>
 			{% elif item.is_file() %}
-				<a href='{{item.path}}'><i class="{{ item.name | icon_name }}"></i> {{item.name}}</a>
+				<a href='{{'/' + item.path[BASE_DIR|length:] if BASE_DIR == '/' else item.path.replace(BASE_DIR, '', 1)}}'><i class="{{ item.name | icon_name }}"></i> {{item.name}}</a>
 			{% endif %}
 		</li>
 		{% endfor %}
