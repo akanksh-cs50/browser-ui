@@ -14,14 +14,12 @@ def favicon():
 BASE_DIR = '/'
 
 # trailing slash needs to be removed now because of how the base directory is implemented in templates/ui.html
-BASE_DIR = BASE_DIR[1:] if BASE_DIR.endswith('/') and BASE_DIR != '/' else BASE_DIR
-
+BASE_DIR = BASE_DIR[:-1] if BASE_DIR.endswith('/') and BASE_DIR != '/' else BASE_DIR
 
 @app.route('/', defaults={'current_dir': ''})
 @app.route('/<path:current_dir>')
 def ui(current_dir):
 
-    print(BASE_DIR, current_dir)
     current_dir = os.path.join(BASE_DIR, current_dir)
 
     if not os.path.exists(current_dir):
