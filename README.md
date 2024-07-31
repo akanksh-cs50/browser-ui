@@ -9,6 +9,12 @@ This project was made as a replacement to the default directory listing when vis
 and make it look like this
 ![Filesystem directory contents with icons beside them to distinguish their type](doc/new.png)
 
+# Demo
+
+Video: https://youtu.be/u4Zy3ViEe-8
+
+<iframe width="972" height="547" src="https://www.youtube.com/embed/u4Zy3ViEe-8" title="My CS50x final project - BrowserUI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 # Usage
 
 This project requires Python to be installed.
