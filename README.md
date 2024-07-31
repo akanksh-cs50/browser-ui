@@ -2,6 +2,16 @@
 
 A web app to browse your server's files.
 
+This flask app can be used can be used to access files over the network (the same wifi) on any device which has access to the network and has a web browser.
+
+This makes it more convinient than setting up other wirless transfer protocols such as ftp, ssh, samba, webdav, etc.
+
+This web app has features such as:
+
+- Nerd Font icons to distinguish fies/directories
+- Search through entries
+- Respects light/dark mode preference
+
 # About
 This project was made as a replacement to the default directory listing when visiting a http server
 ![Big text showing the path and all the items below it in a filesystem directory](doc/example.png)
