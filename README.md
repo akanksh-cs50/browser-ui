@@ -8,26 +8,35 @@ This makes it more convinient than setting up other wirless transfer protocols s
 
 This web app has features such as:
 
-- Nerd Font icons to distinguish fies/directories
-- Search through entries
-- Respects light/dark mode preference
+- [Nerd Font icons](https://www.nerdfonts.com/cheat-sheet) to distinguish fies/directories, eg. a file ending in .py, a python file has a python icon next to it in the web app.
+- Search through entries, javascript is used on the client side to filter through the directory entries. This can be used as soon as it's loaded as the search bar is auto-focused.
+- Respects light/dark mode preference. This can be changed in ``static/style.css`` with the ``:root`` property, the default dark mode mimics the matrix theme.
 
 # About
+
 This project was made as a replacement to the default directory listing when visiting a http server
 ![Big text showing the path and all the items below it in a filesystem directory](doc/example.png)
 
 and make it look like this
 ![Filesystem directory contents with icons beside them to distinguish their type](doc/new.png)
 
+It is an overhaul of the default.
+
 # Demo
 
 Video: https://youtu.be/u4Zy3ViEe-8
 
-<iframe width="972" height="547" src="https://www.youtube.com/embed/u4Zy3ViEe-8" title="My CS50x final project - BrowserUI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Thumbnail for the youtube video showcasing 'browser-ui'](http://img.youtube.com/vi/u4Zy3ViEe-8/0.jpg)](http://www.youtube.com/watch?v=u4Zy3ViEe-8)
+
+Thanks to [this stackoverflow answer for the above markdown](https://stackoverflow.com/a/16079387) :)
 
 # Usage
 
-This project requires Python to be installed.
+This project requires Python to be installed on the server.
+
+In my case I have used python 3.12 and Flask 3.0.3.
+
+First step is to download the source code with ``git clone https://github.com/akanksh-cs50/browser-ui.git`` or ``https://github.com/akanksh-cs50/browser-ui/archive/refs/heads/main.zip`` and open a terminal in the directory.
 
 ## Windows
 
@@ -35,7 +44,11 @@ On Windows you can run ```pip install -r requirements.txt```, and then run ```fl
 
 ## macOS / Linux
 
-Unix-based systems such as macOS and linux require a virtual evironment to be used, which can be achieved with the below commands.
+Unix-based systems such as macOS and linux require a virtual evironment to be used.
+
+Which can be achieved with the below commands.
+
+More details about this change is present in [PEP 668](https://peps.python.org/pep-0668/)
 
 ```
 python3 -m venv .venv # creating a virtual environment in .venv/
